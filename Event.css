@@ -40,7 +40,9 @@ h1, h2, h3, h4, .logo{
         color: #F2F2F7;
 
 }
-
+.dark-mode .hamburger {
+  margin-top: 0;  
+}
 .dark-mode .btn-edit {
   background-color: #ffffff;
   border: 2px solid #F2F2F7;
@@ -940,6 +942,8 @@ input::placeholder{
     background-color: #f9fafb;
     border: 1px solid #e5e7eb;
     margin-top: 5px;
+    color: #334155;
+
   }
 
   .toggle-details {
@@ -1089,6 +1093,7 @@ input:checked + .slider:before {
 
   }
 }
+
 
 
 
