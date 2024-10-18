@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Management Dashboard</title>
+    <link rel="stylesheet" href="Event.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Hamburger Icon -->
+      <div>
+        <!-- <span>Full Logo</span> -->
+        <div class="hamburger" id="hamburger" onclick="toggleMobileImages()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+
+      <!-- Sidebar -->
+      <aside class="sidebar" id="sidebar">
+        <div class="logo" style="font-size: 12px">Full Logo</div>
+        <ul class="nav-menu">
+          <li class="sideImageContainer">
+            <img src="icons/home.svg" class="" /><a href="#">Home</a>
+          </li>
+          <li class="sideImageContainer">
+            <img src="icons/solar_calendar-linear.svg" /><a href="#">Events</a>
+          </li>
+          <li class="sideImageContainer">
+            <img src="icons/Group.svg" /><a href="#">Speakers</a>
+          </li>
+          <li class="sideImageContainer">
+            <img src="icons/solar_document-linear.svg" /><a href="#">Reports</a>
+          </li>
+          <li class="sideImageContainer">
+            <img src="icons/bell.svg" /><a href="#"
+              >Notifications <span class="badge">3</span></a
+            >
+          </li>
+          <li class="sideImageContainer">
+            <img src="icons/double-chat-bubble.svg" /><a href="#">Messages</a>
+          </li>
+          <li class="sideImageContainer">
+            <img src="icons/settings-2.svg" /><a href="#">Settings</a>
+          </li>
+          <li class="sideImageContainer">
+            <img src="icons/double-chevron-left.svg" /><a class="collapse-btn">
+              Collapse
+            </a>
+          </li>
+          <li class="sideImageContainer">
+            <label class="switch">
+              <input type="checkbox" id="darkModeToggle" />
+              <span class="slider"></span>
+            </label>
+            <a href="#">Dark mode</a>
+          </li>
+
+          <li class="sideImageContainer">
+            <img src="icons/Avatar.svg" /><a
+              >Rudra Devi
+              <span style="font-size: 12px; color: #64748b; display: block"
+                >rudra.devi@gmail.com</span
+              ></a
+            >
+          </li>
+        </ul>
+      </aside>
+
+      <!-- Images displayed at the bottom on mobile -->
+      <div class="mobile-images" id="mobile-images">
+        <li class="mobileImageContainer">
+          <img src="icons/home.svg" class="mobile-icon" />
+          <a href="#" class="anchor">Home</a>
+        </li>
+        <li class="mobileImageContainer">
+          <img src="icons/solar_calendar-linear.svg" class="mobile-icon" />
+          <a href="#" class="anchor">Events</a>
+        </li>
+        <li class="mobileImageContainer">
+          <img src="icons/Group.svg" class="mobile-icon" />
+          <a href="#" class="anchor">Speakers</a>
+        </li>
+        <li class="mobileImageContainer">
+          <img src="icons/solar_document-linear.svg" class="mobile-icon" />
+          <a href="#" class="anchor">Reports</a>
+        </li>
+        <li class="mobileImageContainer">
+          <img src="icons/Avatar.svg" class="mobile-icon" />
+          <a href="#" class="anchor">Profile</a>
+        </li>
+      </div>
+
+      <!-- Main Content -->
+      <main class="main-content">
+        <header>
+          <h1 class="welcome">Welcome! Here's your summary</h1>
+          <div class="cards">
+            <div class="card">
+              <div style="display: flex; gap: 5px">
+                <h3 style="font-size: 16px" class="event">Total Events</h3>
+                <img src="icons/information.svg" alt="" />
+              </div>
+              <div style="display: flex; gap: 10px">
+                <span
+                  style="font-size: 20px; font-weight: 600"
+                  class="numberEvent"
+                  >100,000</span
+                >
+                <span>
+                  <img src="icons/Vector.svg" alt="" />
+                  <span
+                    style="font-size: 10px; font-weight: 600; color: #10b981"
+                    >+5.0%</span
+                  ></span
+                >
+              </div>
+            </div>
+
+            <div class="card">
+              <div style="display: flex; gap: 5px">
+                <h3 style="font-size: 16px" class="event">Active Speakers</h3>
+                <img src="icons/information.svg" alt="" class="infoIcon" />
+              </div>
+              <div style="display: flex; gap: 10px">
+                <span
+                  style="font-size: 20px; font-weight: 600"
+                  class="numberEvent"
+                  >25</span
+                >
+                <span>
+                  <img src="icons/arrow-down-right.svg" alt="" />
+                  <span
+                    style="font-size: 10px; font-weight: 600; color: #f43f5e"
+                  >
+                    -5.0%</span
+                  ></span
+                >
+              </div>
+            </div>
+
+            <div class="card">
+              <div style="display: flex; gap: 5px">
+                <h3 style="font-size: 16px" class="event">
+                  Total Registration
+                </h3>
+                <img src="icons/information.svg" alt="" />
+              </div>
+              <div style="display: flex; gap: 10px">
+                <span
+                  style="font-size: 20px; font-weight: 600"
+                  class="numberEvent"
+                  >300</span
+                >
+                <span>
+                  <img src="icons/Vector.svg" alt="" />
+                  <span
+                    style="font-size: 10px; font-weight: 600; color: #10b981"
+                    >+5.0%</span
+                  ></span
+                >
+              </div>
+            </div>
+
+            <div class="card">
+              <div style="display: flex; gap: 5px">
+                <h3 style="font-size: 16px" class="event">Total Revenue</h3>
+                <img src="icons/information.svg" alt="" />
+              </div>
+              <div style="display: flex; gap: 10px">
+                <span
+                  style="font-size: 20px; font-weight: 600"
+                  class="numberEvent"
+                  >$500,000</span
+                >
+                <span>
+                  <img src="icons/Vector.svg" alt="" />
+                  <span
+                    style="font-size: 10px; font-weight: 600; color: #10b981"
+                    >+5.0%</span
+                  ></span
+                >
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <!-- Event Registration Chart -->
+        <div>
+          <h1 style="font-size: 18px; margin-top: 30px">
+            Event Registration per month
+          </h1>
+          <div class="chartContainer">
+            <div class="eventChart">
+              <canvas id="eventChart"></canvas>
+            </div>
+            <!-- Carousel -->
+            <div>
+              <div class="carousel">
+                <button class="carousel-btn prev">‹</button>
+                <div class="carousel-content">
+                  <div class="slide">
+                    <div class="overlay-text">
+                      <h2>Latest News & Update</h2>
+                      <p style="width: 400px; font-size: 12px">
+                        Turpis interdum nunc varius ornare dignissim pretium.
+                        Massa ornare quis aliquet sed vitae. Sed velit nisi,
+                        fermentum erat. Fringilla purus, erat fringilla
+                        tincidunt quisque non. Pellentesque in ut tellus..
+                      </p>
+                    </div>
+                  </div>
+                  <div class="slide">
+                    <div class="overlay-text">
+                      <h2>New Features Coming Soon!</h2>
+                      <p style="width: 400px; font-size: 12px">
+                        Turpis interdum nunc varius ornare dignissim pretium.
+                        Massa ornare quis aliquet sed vitae. Sed velit nisi,
+                        fermentum erat. Fringilla purus, erat fringilla
+                        tincidunt quisque non. Pellentesque in ut tellus..
+                      </p>
+                    </div>
+                  </div>
+                  <div class="slide">
+                    <div class="overlay-text">
+                      <h2>Stay Tuned for Updates</h2>
+                      <p style="width: 400px; font-size: 12px">
+                        Turpis interdum nunc varius ornare dignissim pretium.
+                        Massa ornare quis aliquet sed vitae. Sed velit nisi,
+                        fermentum erat. Fringilla purus, erat fringilla
+                        tincidunt quisque non. Pellentesque in ut tellus..
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <button class="carousel-btn next">›</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Events History Table -->
+        <div class="table-container">
+          <h1 style="font-size: 22px">Events History</h1>
+          <div class="table-header">
+            <div class="table-filters">
+              <div>
+                <input type="text" placeholder="Search..." class="search-bar" />
+              </div>
+              <div>
+                <select class="dropdown">
+                  <option value="date">Date</option>
+                  <option value="status">Status</option>
+                  <option value="name">Name</option>
+                </select>
+              </div>
+              <div>
+                <select class="dropdown">
+                  <option value="date">Status</option>
+                  <option value="status">Date</option>
+                  <option value="name">Name</option>
+                </select>
+              </div>
+              <div>
+                <select class="dropdown">
+                  <option value="date">Name</option>
+                  <option value="status">Status</option>
+                  <option value="name">Date</option>
+                </select>
+              </div>
+              <div style="padding-top: 7px; font-size: 14px; font-weight: 600">
+                Displaying 100 results
+              </div>
+              <div class="Sort">
+                <span style="padding-top: 8px">Sort:</span>
+                <div>
+                  <select id="mostRecent">
+                    <option value="date">Most recent</option>
+                    <option value="status">Status</option>
+                    <option value="name">Date</option>
+                  </select>
+                </div>
+              </div>
+              <div class="dotContainer">
+                <button class="vertical-dots">
+                  <span class="dot"></span>
+                  <span class="dot"></span>
+                  <span class="dot"></span>
+                </button>
+                <div>
+                  <button class="export-btn">
+                    <img
+                      src="icons/Vector (1).svg"
+                      alt="export"
+                      class="export"
+                    />Export
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <table class="events-table">
+            <thead class="tableHead">
+              <tr>
+                <th>Event Name</th>
+                <th class="hide-on-mobile">Date</th>
+                <th class="hide-on-mobile">Speaker</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Cloud Innovation Summit</td>
+                <td class="statusMobileCompleted">
+                  <span class="complete">
+                    <span>Completed</span>
+                  </span>
+                </td>
+                <td class="hide-on-mobile">2024-10-15</td>
+                <td class="hide-on-mobile">Jane Doe</td>
+                <td>
+                  <span class="status completed">
+                    <span class="status-dot completed"></span>
+                    <span class="status completed">Completed</span>
+                  </span>
+                </td>
+              </tr>
+
+              <!-- Dropdown button for mobile view -->
+              <tr class="mobile-row">
+                <td colspan="4">
+                  <button class="toggle-details" onclick="toggleDetails(this)">
+                    Show Details
+                  </button>
+                  <div class="dropdown-content">
+                    <p><strong>Date:</strong> 2024-10-15</p>
+                    <p><strong>Speaker:</strong> Jane Doe</p>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <td>Blockchain Revolution Conference</td>
+                <td class="statusMobileProgress">
+                  <span class="inProgress">
+                    <span>In Progress</span>
+                  </span>
+                </td>
+                <td class="hide-on-mobile">2024-11-05</td>
+                <td class="hide-on-mobile">Dr. Peter Smith</td>
+                <td>
+                  <span class="status in-progress">
+                    <span class="status-dot in-progress"></span>
+                    <span class="status in-progress">In Progress</span>
+                  </span>
+                </td>
+              </tr>
+
+              <tr class="mobile-row">
+                <td colspan="4">
+                  <button class="toggle-details" onclick="toggleDetails(this)">
+                    Show Details
+                  </button>
+                  <div class="dropdown-content">
+                    <p><strong>Date:</strong> 2024-11-05</p>
+                    <p><strong>Speaker:</strong> Dr. Peter Smith</p>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <td>AI in Healthcare Symposium</td>
+                <td class="statusMobileCompleted">
+                  <span class="complete">
+                    <span>Completed</span>
+                  </span>
+                </td>
+                <td class="hide-on-mobile">2024-12-01</td>
+                <td class="hide-on-mobile">Dr. Aisha Malik</td>
+                <td>
+                  <span class="status completed">
+                    <span class="status-dot completed"></span>
+                    <span class="status completed">Completed</span>
+                  </span>
+                </td>
+              </tr>
+
+              <tr class="mobile-row">
+                <td colspan="4">
+                  <button class="toggle-details" onclick="toggleDetails(this)">
+                    Show Details
+                  </button>
+                  <div class="dropdown-content">
+                    <p><strong>Date:</strong> 2024-12-01</p>
+                    <p><strong>Speaker:</strong> Dr. Aisha Malik</p>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <td>Future of Fintech Forum</td>
+                <td class="statusMobileCompleted">
+                  <span class="complete">
+                    <span>Completed</span>
+                  </span>
+                </td>
+                <td class="hide-on-mobile">2024-10-25</td>
+                <td class="hide-on-mobile">John Lee</td>
+                <td>
+                  <span class="status completed">
+                    <span class="status-dot completed"></span>
+                    <span class="status completed">Completed</span>
+                  </span>
+                </td>
+              </tr>
+
+              <tr class="mobile-row">
+                <td colspan="4">
+                  <button class="toggle-details" onclick="toggleDetails(this)">
+                    Show Details
+                  </button>
+                  <div class="dropdown-content">
+                    <p><strong>Date:</strong> 2024-10-25</p>
+                    <p><strong>Speaker:</strong> John Lee</p>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <td>Sustainable Energy Expo</td>
+                <td class="statusMobileCompleted">
+                  <span class="complete">
+                    <span>Completed</span>
+                  </span>
+                </td>
+                <td class="hide-on-mobile">2024-11-12</td>
+                <td class="hide-on-mobile">Prof. Alan Green</td>
+                <td>
+                  <span class="status completed">
+                    <span class="status-dot completed"></span>
+                    <span class="status completed">Completed</span>
+                  </span>
+                </td>
+              </tr>
+
+              <tr class="mobile-row">
+                <td colspan="4">
+                  <button class="toggle-details" onclick="toggleDetails(this)">
+                    Show Details
+                  </button>
+                  <div class="dropdown-content">
+                    <p><strong>Date:</strong> 2024-11-12</p>
+                    <p><strong>Speaker:</strong> Prof. Alan Green</p>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <td>Web3 Interfaces Workshop</td>
+                <td class="statusMobileCompleted">
+                  <span class="complete">
+                    <span>Completed</span>
+                  </span>
+                </td>
+                <td class="hide-on-mobile">2024-11-12</td>
+                <td class="hide-on-mobile">Kevin Adams</td>
+                <td>
+                  <span class="status completed">
+                    <span class="status-dot completed"></span>
+                    <span class="status completed">Completed</span>
+                  </span>
+                </td>
+              </tr>
+
+              <tr class="mobile-row">
+                <td colspan="4">
+                  <button class="toggle-details" onclick="toggleDetails(this)">
+                    Show Details
+                  </button>
+                  <div class="dropdown-content">
+                    <p><strong>Date:</strong> 2024-12-01</p>
+                    <p><strong>Speaker:</strong> Kevin Adams</p>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <td>Cybersecurity for Startups</td>
+                <td class="statusMobileProgress">
+                  <span class="inProgress">
+                    <span>In Progress</span>
+                  </span>
+                </td>
+                <td class="hide-on-mobile">2024-11-12</td>
+                <td class="hide-on-mobile">Emily Zhang</td>
+                <td>
+                  <span class="status in-progress">
+                    <span class="status-dot in-progress"></span>
+                    <span class="status in-progress">In Progress</span>
+                  </span>
+                </td>
+              </tr>
+
+              <tr class="mobile-row">
+                <td colspan="4">
+                  <button class="toggle-details" onclick="toggleDetails(this)">
+                    Show Details
+                  </button>
+                  <div class="dropdown-content">
+                    <p><strong>Date:</strong> 2024-11-12</p>
+                    <p><strong>Speaker:</strong> Emily Zhang</p>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <td>Smart Cities Forum</td>
+                <td class="statusMobileProgress">
+                  <span class="inProgress">
+                    <span>In Progress</span>
+                  </span>
+                </td>
+                <td class="hide-on-mobile">2024-11-12</td>
+                <td class="hide-on-mobile">Dr. Maria Hernandez</td>
+                <td>
+                  <span class="status in-progress">
+                    <span class="status-dot in-progress"></span>
+                    <span class="status in-progress">In Progress</span>
+                  </span>
+                </td>
+              </tr>
+
+              <tr class="mobile-row">
+                <td colspan="4">
+                  <button class="toggle-details" onclick="toggleDetails(this)">
+                    Show Details
+                  </button>
+                  <div class="dropdown-content">
+                    <p><strong>Date:</strong> 2024-11-12</p>
+                    <p><strong>Speaker:</strong> Dr. Maria Hernandez</p>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <td>Tech Safari Mixer</td>
+                <td class="statusMobileProgress">
+                  <span class="inProgress">
+                    <span>In Progress</span>
+                  </span>
+                </td>
+                <td class="hide-on-mobile">2024-11-12</td>
+                <td class="hide-on-mobile">Guest Panel</td>
+                <td>
+                  <span class="status in-progress">
+                    <span class="status-dot in-progress"></span>
+                    <span class="status in-progress">In Progress</span>
+                  </span>
+                </td>
+              </tr>
+
+              <tr class="mobile-row">
+                <td colspan="4">
+                  <button class="toggle-details" onclick="toggleDetails(this)">
+                    Show Details
+                  </button>
+                  <div class="dropdown-content">
+                    <p><strong>Date:</strong> 2024-11-12</p>
+                    <p><strong>Speaker:</strong> Guest Panel</p>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <td>Data Analytics in Business</td>
+                <td class="statusMobileProgress">
+                  <span class="inProgress">
+                    <span>In Progress</span>
+                  </span>
+                </td>
+                <td class="hide-on-mobile">2024-11-12</td>
+                <td class="hide-on-mobile">Rachel Moore</td>
+                <td>
+                  <span class="status in-progress">
+                    <span class="status-dot in-progress"></span>
+                    <span class="status in-progress">In Progress</span>
+                  </span>
+                </td>
+              </tr>
+
+              <tr class="mobile-row">
+                <td colspan="4">
+                  <button class="toggle-details" onclick="toggleDetails(this)">
+                    Show Details
+                  </button>
+                  <div class="dropdown-content">
+                    <p><strong>Date:</strong> 2024-11-12</p>
+                    <p><strong>Speaker:</strong> Rachel Moore</p>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <!-- Pagination -->
+          <div class="paginationContainer">
+            <div class="pagination">
+              <button class="pagination-btn">‹</button>
+              <span
+                class="page-number"
+                style="
+                  height: 24px;
+                  width: 24px;
+                  border-radius: 50%;
+                  background-color: #8576ff;
+                  color: white;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                "
+                >1</span
+              >
+              <span class="page-number">2</span>
+              <span class="page-number">3</span>
+              <button class="pagination-btn-1">›</button>
+            </div>
+            <div
+              style="
+                display: flex;
+                gap: 5px;
+                justify-content: center;
+                align-items: center;
+              "
+            >
+              <p class="Show" style="margin-bottom: 20px">Show:</p>
+              <div>
+                <select class="dropdown" style="width: 90px">
+                  <option value="date">10 rows</option>
+                  <option value="status">50 rows</option>
+                  <option value="name">100 rows</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- Modal -->
+    <div id="eventModal" class="modal">
+        <div class="modalTop">
+      <div class="modal-content">
+        <div>
+          <h2>Event Name</h2>
+          <h3>Event Date</h3>
+        </div>
+        <div>
+          <span class="close-btn" onclick="closeModal()">&times;</span>
+        </div>
+        <p class="description">Event Description</p>
+
+        <div>
+          <div class="avatar-group speakers">
+            <!-- Speaker avatars will be added here dynamically -->
+          </div>
+          <p>
+            3 Guest Speakers: Speaker name A, Speaker name B, <br />
+            Speaker name C. <br />
+            <span> 300 Attendees</span>
+          </p>
+        </div>
+        </div>
+
+       
+      </div>
+       <div class="modal-footer">
+          <div><button class="btn-edit">Edit</button></div>
+          <div class="btnlast">
+            <button class="btn btn-delete">Delete</button>
+            <button class="btn btn-complete">Mark as completed</button>
+          </div>
+        </div>
+    </div>
+
+    <script src="Event.js"></script>
+  </body>
+</html>
